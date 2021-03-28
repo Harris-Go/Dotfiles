@@ -70,6 +70,7 @@ let g:airline#extensions#hunks#non_zero_only = 1
 let g:pandoc#folding#mode = ['manual']
 let g:pandoc#folding#fdc = 0
 let g:pandoc#syntax#conceal#urls = 1
+let g:vimtex_view_method = 'zathura'
 
 
 """""""""""""""""""""""
@@ -104,8 +105,9 @@ nnoremap <leader>l :Limelight!!<CR>
 "Turn of search highlight
 nnoremap <silent> <leader>h :noh<CR>
 
-"Toggle markdown preview
-nnoremap <leader>m :MarkdownPreview<CR>
+"Toggle previews
+nnoremap <leader>pm :MarkdownPreview<CR>
+nnoremap <leader>pl :VimtexCompile<CR>
 
 "Pandoc Commands
 nnoremap <leader>pp :!pandoc %:p:r.md --from markdown+grid_tables -V geometry:"top=2cm, bottom=1.5cm, left=2cm, right=2cm" -V CJkmainfont="Roboto Medium" -o %:p:r.pdf<CR>
