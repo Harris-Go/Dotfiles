@@ -9,7 +9,9 @@ Plug 'vim-airline/vim-airline' "Customised Status Bar
 Plug 'junegunn/goyo.vim' "Distraction Free Writing
 Plug 'junegunn/limelight.vim' "Focus on the current paragraph
 Plug 'reedes/vim-pencil' "Adds writing features
-Plug 'plasticboy/vim-markdown' "Adds concealing support and syntax highlighting
+"Plug 'plasticboy/vim-markdown' "Adds concealing support and syntax highlighting
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'dhruvasagar/vim-table-mode' "Makes it easier to edit tables
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } "Allows a visual of the markdown text
 Plug 'lervag/vimtex' "Adds improved syntax highlighting for latex files
@@ -55,7 +57,10 @@ let g:pencil#autoformat = 1
 let g:pencil#textwidth = 80
 let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_auto_insert_bullets = 0
-"let g:mkdp_browser = firefox -new-window
+let g:mkdp_browser = 'qutebrowser'
+let g:gitgutter_map_keys = 0
+let g:airline#extensions#battery#enabled = 1
+let g:airline#extensions#hunks#non_zero_only = 1
 
 
 """""""""""""""""""""""
@@ -148,6 +153,8 @@ augroup transparent
 	autocmd ColorScheme * hi SpellRare guibg=NONE guifg=#B48EAD gui=undercurl,bold,italic
 	autocmd ColorScheme * hi SpellLocal guibg=NONE guifg=#A3BE8C gui=undercurl,bold,italic
 	autocmd ColorScheme * hi SignColumn guibg=NONE
+	autocmd ColorScheme * hi clear Conceal
+	autocmd ColorScheme * hi Conceal guifg=#88C0D0
 augroup END
 
 augroup filetype_markdown
@@ -158,6 +165,7 @@ augroup filetype_markdown
 	autocmd ColorScheme * hi markdownUrl gui=bold,undercurl,italic guifg=#5E81AC
 	autocmd FileType markdown :set spell spelllang=en_gb
 	autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft'})
+	autocmd FileType tex call pencil#init({'wrap': 'soft'})
 augroup END
 colorscheme nord
 
