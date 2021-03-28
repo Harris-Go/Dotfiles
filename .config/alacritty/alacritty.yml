@@ -5,7 +5,7 @@
 #██║  ██║███████╗██║  ██║╚██████╗██║  ██║██║   ██║      ██║      ██║   
 #╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝      ╚═╝   
 
-background_opacity: 0.9
+background_opacity: 0.95
 draw_bold_text_with_bright_colors: true
 
 selection:
@@ -25,17 +25,16 @@ scrolling:
 
 font:
         normal:
-                #family: "RobotoMono Nerd Font"
                 family: "MesloLGS NF"
                 style: Regular
         bold:
-                family: "Roboto Mono Nerd Font"
+                family: "MesloLGS NF"
                 style: Bold
         italic:
-                family: "Roboto Mono Nerd Font"
+                family: "MesloLGS NF"
                 style: Italic
         bold_italic:
-                family: "Roboto mono Nerd Font"
+                family: "MesloLGS NF"
                 style: Bold Italic
         size: 17
 
