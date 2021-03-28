@@ -44,6 +44,8 @@ set nofoldenable
 set noswapfile
 set updatetime=100
 setlocal foldcolumn=0
+set splitbelow
+set splitright
 
 
 """""""""""""""""""""""
@@ -69,37 +71,59 @@ let g:pandoc#syntax#conceal#urls = 1
 """""""""""""""""""""""
 
 let mapleader = ","
+
 "Toggle Writing Mode
 nnoremap <leader>w :call ToggleWriting()<CR>
+
 "Toggle Spelling
 nnoremap <leader>s :setlocal spell! spelllang=en_gb<CR>
+
 "Toggle Pencil
 nnoremap <leader>sp :SoftPencil<CR>
 nnoremap <leader>hp :HardPencil<CR>
 nnoremap <leader>np :NoPencil<CR>
+
 "Toggle Goyo
 nnoremap <leader>g :Goyo 80<CR> "Format to Hard Wrap mode
+
+"Format from Soft Wrap mode
 nnoremap <leader>f gggqG
+
 "Format from Hard Wrap mode
 nnoremap <leader>F :%norm vipJ<CR>
+
 "Toggle Limelight
 nnoremap <leader>l :Limelight!!<CR>
+
 "Turn of search highlight
 nnoremap <silent> <leader>h :noh<CR>
+
 "Toggle markdown preview
 nnoremap <leader>m :MarkdownPreview<CR>
+
+"Pandoc Commands
 nnoremap <leader>pp :!pandoc %:p:r.md --from markdown+grid_tables -V geometry:"top=2cm, bottom=1.5cm, left=2cm, right=2cm" -V CJkmainfont="Roboto Medium" -o %:p:r.pdf<CR>
 nnoremap <leader>pd :!pandoc %:p:r.md --from markdown+grid_tables -o %:p:r.docx<CR>
+
 "Use ,, to jump to jump points
 inoremap ,, <Esc>/<++><CR>:noh<CR>c4l
 nnoremap ,, <Esc>/<++><CR>:noh<CR>c4l
+
 "Use jj to enter normal mode
 inoremap jj <Esc>
+
 "Turn off arrow keys
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
+
+"Map window controls
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+
 "Set undo points
 inoremap . .<C-g>u
 inoremap ! !<C-g>u
