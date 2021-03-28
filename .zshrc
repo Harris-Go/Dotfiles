@@ -118,11 +118,14 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 bindkey "jj" vi-cmd-mode
 
 alias n="nvim"
-alias nv="nvim .config/nvim/init.vim"
+alias nconf="nvim $HOME/.config/nvim/init.vim"
+alias aconf="nvim $HOME/.config/alacritty/alacritty.yml"
 alias y="yay -Syyu"
 alias lsa="ls -al --color=always | less"
 alias ls="ls --color=always"
 alias c="clear"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias zconf="nvim $HOME/.zshrc"
+alias zsource="source $HOME/.zshrc"
 
 #source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
