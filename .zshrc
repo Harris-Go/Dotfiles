@@ -120,7 +120,8 @@ bindkey "jj" vi-cmd-mode
 alias n="nvim"
 alias nv="nvim .config/nvim/init.vim"
 alias y="yay -Syyu"
-alias ls="ls -al --color=always | less"
+alias lsa="ls -al --color=always | less"
+alias ls="ls --color=always"
 alias c="clear"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
