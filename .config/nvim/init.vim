@@ -1,3 +1,4 @@
+
 """""""""""
 " Plugins "
 """""""""""
@@ -9,7 +10,6 @@ Plug 'vim-airline/vim-airline' "Customised Status Bar
 Plug 'junegunn/goyo.vim' "Distraction Free Writing
 Plug 'junegunn/limelight.vim' "Focus on the current paragraph
 Plug 'reedes/vim-pencil' "Adds writing features
-"Plug 'plasticboy/vim-markdown' "Adds concealing support and syntax highlighting
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'dhruvasagar/vim-table-mode' "Makes it easier to edit tables
@@ -43,6 +43,7 @@ set conceallevel=2
 set nofoldenable
 set noswapfile
 set updatetime=100
+setlocal foldcolumn=0
 
 
 """""""""""""""""""""""
@@ -59,8 +60,10 @@ let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_auto_insert_bullets = 0
 let g:mkdp_browser = 'qutebrowser'
 let g:gitgutter_map_keys = 0
-let g:airline#extensions#battery#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
+let g:pandoc#folding#mode = ['manual']
+let g:pandoc#folding#fdc = 0
+let g:pandoc#syntax#conceal#urls = 1
 
 
 """""""""""""""""""""""
@@ -148,21 +151,20 @@ augroup transparent
 	"Adjust colours of background and spell checking
 	autocmd ColorScheme * hi Normal guibg=NONE ctermbg=NONE
 	autocmd ColorScheme * hi NonText guibg=NONE ctermbg=NONE
-	autocmd ColorScheme * hi SpellBad guibg=NONE guifg=#BF616A gui=undercurl,bold,italic
-	autocmd ColorScheme * hi SpellCap guibg=NONE guifg=#EBCB8B gui=undercurl,bold,italic
-	autocmd ColorScheme * hi SpellRare guibg=NONE guifg=#B48EAD gui=undercurl,bold,italic
-	autocmd ColorScheme * hi SpellLocal guibg=NONE guifg=#A3BE8C gui=undercurl,bold,italic
+	autocmd ColorScheme * hi SpellBad guibg=NONE guifg=#BF616A gui=undercurl,bold
+	autocmd ColorScheme * hi SpellCap guibg=NONE guifg=#EBCB8B gui=undercurl,bold
+	autocmd ColorScheme * hi SpellRare guibg=NONE guifg=#B48EAD gui=undercurl,bold
+	autocmd ColorScheme * hi SpellLocal guibg=NONE guifg=#A3BE8C gui=undercurl,bold
 	autocmd ColorScheme * hi SignColumn guibg=NONE
-	autocmd ColorScheme * hi clear Conceal
-	autocmd ColorScheme * hi Conceal guifg=#88C0D0
+	autocmd ColorScheme * hi Conceal guifg=#88C0D0 guibg=NONE
 augroup END
 
 augroup filetype_markdown
 	autocmd!
 	"Set Bold, Italic and URL colors
-	autocmd ColorScheme * hi Bold gui=bold guifg=#88C0D0
-	autocmd ColorScheme * hi Italic gui=italic guifg=#88C0D0
-	autocmd ColorScheme * hi markdownUrl gui=bold,undercurl,italic guifg=#5E81AC
+	"autocmd ColorScheme * hi Bold gui=bold guifg=#88C0D0
+	"autocmd ColorScheme * hi Italic gui=italic guifg=#88C0D0
+	"autocmd ColorScheme * hi markdownUrl gui=bold,undercurl,italic guifg=#5E81AC
 	autocmd FileType markdown :set spell spelllang=en_gb
 	autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft'})
 	autocmd FileType tex call pencil#init({'wrap': 'soft'})
