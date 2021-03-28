@@ -161,10 +161,6 @@ augroup END
 
 augroup filetype_markdown
 	autocmd!
-	"Set Bold, Italic and URL colors
-	"autocmd ColorScheme * hi Bold gui=bold guifg=#88C0D0
-	"autocmd ColorScheme * hi Italic gui=italic guifg=#88C0D0
-	"autocmd ColorScheme * hi markdownUrl gui=bold,undercurl,italic guifg=#5E81AC
 	autocmd FileType markdown :set spell spelllang=en_gb
 	autocmd FileType markdown,mkd call pencil#init({'wrap': 'soft'})
 	autocmd FileType tex call pencil#init({'wrap': 'soft'})
