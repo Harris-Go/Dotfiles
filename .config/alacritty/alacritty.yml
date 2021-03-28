@@ -1,3 +1,44 @@
+# █████╗ ██╗      █████╗  ██████╗██████╗ ██╗████████╗████████╗██╗   ██╗
+#██╔══██╗██║     ██╔══██╗██╔════╝██╔══██╗██║╚══██╔══╝╚══██╔══╝╚██╗ ██╔╝
+#███████║██║     ███████║██║     ██████╔╝██║   ██║      ██║    ╚████╔╝ 
+#██╔══██║██║     ██╔══██║██║     ██╔══██╗██║   ██║      ██║     ╚██╔╝  
+#██║  ██║███████╗██║  ██║╚██████╗██║  ██║██║   ██║      ██║      ██║   
+#╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝      ╚═╝   
+
+background_opacity: 0.9
+draw_bold_text_with_bright_colors: true
+
+selection:
+        semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+        save_to_clipboard: true
+
+window:
+        padding:
+                x: 3
+                y: 3
+        decorations: none
+
+scrolling:
+        history: 10000
+        multiplier: 3
+        auto_scroll: true
+
+font:
+        normal:
+                #family: "RobotoMono Nerd Font"
+                family: "MesloLGS NF"
+                style: Regular
+        bold:
+                family: "Roboto Mono Nerd Font"
+                style: Bold
+        italic:
+                family: "Roboto Mono Nerd Font"
+                style: Italic
+        bold_italic:
+                family: "Roboto mono Nerd Font"
+                style: Bold Italic
+        size: 17
+
 colors:
         primary:
                 background: '#2e3440'
@@ -48,36 +89,3 @@ colors:
                 white: '#aeb3bb'
 
 live_config_reload: true
-background_opacity: 0.9
-draw_bold_text_with_bright_colors: true
-
-selection:
-        semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
-        save_to_clipboard: true
-
-window:
-        padding:
-                x: 3
-                y: 3
-        decorations: none
-
-scrolling:
-        history: 10000
-        multiplier: 3
-        auto_scroll: true
-
-font:
-        normal:
-                #family: "RobotoMono Nerd Font"
-                family: "MesloLGS NF"
-                style: Regular
-        bold:
-                family: "Roboto Mono Nerd Font"
-                style: Bold
-        italic:
-                family: "Roboto Mono Nerd Font"
-                style: Italic
-        bold_italic:
-                family: "Roboto mono Nerd Font"
-                style: Bold Italic
-        size: 17
