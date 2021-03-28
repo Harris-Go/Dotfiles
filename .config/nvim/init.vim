@@ -56,8 +56,6 @@ let g:limelight_conceal_guifg = '#3B4252'
 let g:airline_powerline_fonts = 1
 let g:pencil#autoformat = 1
 let g:pencil#textwidth = 80
-let g:vim_markdown_new_list_item_indent = 0
-let g:vim_markdown_auto_insert_bullets = 0
 let g:mkdp_browser = 'qutebrowser'
 let g:gitgutter_map_keys = 0
 let g:airline#extensions#hunks#non_zero_only = 1
@@ -222,8 +220,8 @@ autocmd FileType markdown inoremap <leader>n <CR>---<CR><CR>
 "Insert Bullet Points
 autocmd FileType markdown inoremap <leader>. *<space><CR><CR><++><Esc>2kA
 autocmd FileType markdown inoremap <leader>.. <Esc>o<CR>*<space>
-autocmd FileType markdown inoremap <leader>> <Esc>o<tab>*<space>
-autocmd FileType markdown inoremap <leader>< <Esc>o*<space><Esc>2hxA
+autocmd FileType markdown inoremap <leader>> <Esc>o<CR><tab>*<space>
+autocmd FileType markdown inoremap <leader>< <Esc>o<CR>*<space><Esc>2hxA
 
 "Superscript
 autocmd FileType markdown inoremap <leader>S ^^<space><++><Esc>5hi
