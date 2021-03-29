@@ -22,6 +22,7 @@ Plug 'dhruvasagar/vim-table-mode' "Makes it easier to edit tables
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } "Allows a visual of the markdown text
 Plug 'lervag/vimtex' "Adds improved syntax highlighting for latex files
 Plug 'airblade/vim-gitgutter' "Adds diff markers for changes in git repos
+Plug 'jalvesaq/Nvim-R'
 call plug#end()
 
 
@@ -78,6 +79,7 @@ let g:vimtex_view_method = 'zathura'
 """""""""""""""""""""""
 
 let mapleader = ","
+let maplocalleader=";"
 
 "Toggle Writing Mode
 nnoremap <leader>w :call ToggleWriting()<CR>
@@ -127,16 +129,29 @@ nnoremap <left> <nop>
 nnoremap <right> <nop>
 
 "Map window controls
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap <C-h> <C-w>h
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>ws <C-w>s
+nnoremap <leader>wH <C-w>H
+nnoremap <leader>wJ <C-w>J
+nnoremap <leader>wK <C-w>K
+nnoremap <leader>wL <C-w>L
+nnoremap <leader>w< <C-w><
+nnoremap <leader>w> <C-w>>
+nnoremap <leader>w+ <C-w>+
+nnoremap <leader>w- <C-w>-
+nnoremap <leader>w= <C-w>=
 
 "Set undo points
 inoremap . .<C-g>u
 inoremap ! !<C-g>u
 inoremap ? ?<C-g>u
 inoremap <CR> <CR><C-g>u
+
+"Terminal Mode Remaps
+tnoremap jj <C-\><C-n>
 
 
 """"""""""""""""

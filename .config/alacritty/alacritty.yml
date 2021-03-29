@@ -36,7 +36,7 @@ font:
         bold_italic:
                 family: "MesloLGS NF"
                 style: Bold Italic
-        size: 17
+        size: 20
 
 colors:
         primary:
