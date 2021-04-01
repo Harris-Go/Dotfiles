@@ -23,12 +23,16 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } "Allows
 Plug 'lervag/vimtex' "Adds improved syntax highlighting for latex files
 Plug 'airblade/vim-gitgutter' "Adds diff markers for changes in git repos
 Plug 'jalvesaq/Nvim-R'
+Plug 'liuchengxu/vim-which-key'
 call plug#end()
 
 
 """"""""""""""""""""""
 " Basic Vim Settings "
 """"""""""""""""""""""
+
+let mapleader = ";"
+let maplocalleader=","
 
 set nocompatible
 set termguicolors
@@ -53,6 +57,7 @@ set updatetime=100
 setlocal foldcolumn=0
 set splitbelow
 set splitright
+set timeoutlen=300
 
 
 """""""""""""""""""""""
@@ -72,17 +77,43 @@ let g:pandoc#folding#mode = ['manual']
 let g:pandoc#folding#fdc = 0
 let g:pandoc#syntax#conceal#urls = 1
 let g:vimtex_view_method = 'zathura'
+let g:which_key_map = {}
+let g:which_key_use_floating_win = 0
+
+
+""""""""""""""""""""""""
+" Which Key Dictionary "
+""""""""""""""""""""""""
+
+call which_key#register(';', "g:which_key_map")
+call which_key#register(',', "g:which_key_map")
+nnoremap <silent> <leader> :<c-u>WhichKey ';'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey ','<CR>
+let g:which_key_map = {'m': 'Toggle Writing Mode'}
+let g:which_key_map.w = {
+	\ 'name' : 'windows' ,
+	\ '=' : 'Equalise' ,
+	\ 'h' : 'Left' ,
+	\ 'j' : 'Down' ,
+	\ 'k' : 'Up' ,
+	\ 'l' : 'Right' ,
+	\ 'H' : 'Move Left' ,
+	\ 'J' : 'Move Down' ,
+	\ 'K' : 'Move Up' ,
+	\ 'L' : 'Move Right' ,
+	\ '>' : 'Increase Width' ,
+	\ '<' : 'Decrease Width' ,
+	\ '+' : 'Increase Height' ,
+	\ '-' : 'Decrease Height' ,
+	\ }
 
 
 """""""""""""""""""""""
 " Vim Keyboard Remaps "
 """""""""""""""""""""""
 
-let mapleader = ","
-let maplocalleader=";"
-
 "Toggle Writing Mode
-nnoremap <leader>w :call ToggleWriting()<CR>
+nnoremap <leader>m :call ToggleWriting()<CR>
 
 "Toggle Spelling
 nnoremap <leader>s :setlocal spell! spelllang=en_gb<CR>
@@ -116,8 +147,8 @@ nnoremap <leader>pp :!pandoc %:p:r.md --from markdown+grid_tables -V geometry:"t
 nnoremap <leader>pd :!pandoc %:p:r.md --from markdown+grid_tables -o %:p:r.docx<CR>
 
 "Use ,, to jump to jump points
-inoremap ,, <Esc>/<++><CR>:noh<CR>c4l
-nnoremap ,, <Esc>/<++><CR>:noh<CR>c4l
+inoremap <space><space> <Esc>/<++><CR>:noh<CR>c4l
+nnoremap <space><space> <Esc>/<++><CR>:noh<CR>c4l
 
 "Use jj to enter normal mode
 inoremap jj <Esc>
@@ -133,7 +164,6 @@ nnoremap <leader>wh <C-w>h
 nnoremap <leader>wk <C-w>k
 nnoremap <leader>wl <C-w>l
 nnoremap <leader>wj <C-w>j
-nnoremap <leader>ws <C-w>s
 nnoremap <leader>wH <C-w>H
 nnoremap <leader>wJ <C-w>J
 nnoremap <leader>wK <C-w>K
@@ -203,6 +233,7 @@ augroup transparent
 	autocmd ColorScheme * hi SpellLocal guibg=NONE guifg=#A3BE8C gui=undercurl,bold
 	autocmd ColorScheme * hi SignColumn guibg=NONE
 	autocmd ColorScheme * hi Conceal guifg=#88C0D0 guibg=NONE
+	autocmd ColorScheme * hi WhichKeySeperator guibg=NONE guifg=#B48EAD
 augroup END
 
 augroup filetype_markdown
