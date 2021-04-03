@@ -2,10 +2,6 @@
 " Markdown Bindings "
 """""""""""""""""""""
 
-"Toggle Table Mode
-autocmd FileType markdown nnoremap <leader>t :TableModeToggle<CR>
-autocmd FileType markdown inoremap <leader>t <Esc>:TableModeToggle<CR>i
-
 "Insert Headings
 autocmd FileType markdown inoremap <leader>1 #<space><CR><CR><++><Esc>2kA
 autocmd FileType markdown inoremap <leader>2 ##<space><CR><CR><++><Esc>2kA

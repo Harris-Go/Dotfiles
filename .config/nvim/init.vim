@@ -79,6 +79,14 @@ let g:pandoc#syntax#conceal#urls = 1
 let g:vimtex_view_method = 'zathura'
 let g:which_key_map = {}
 let g:which_key_use_floating_win = 0
+let g:table_mode_disable_mappings = 0
+let g:table_mode_syntax = 1
+
+augroup tableConfig
+	autocmd FileType pandoc let b:table_mode_corner = '+'
+	autocmd FileType pandoc let b:table_mode_corner_corner = '+'
+	autocmd FileType pandoc let g:table_mode_header_fillchar = '='
+augroup END
 
 """""""""""""""""""""""""""
 " Sourcing other settings "
@@ -139,7 +147,7 @@ augroup transparent
 	autocmd ColorScheme * hi SpellLocal guibg=NONE guifg=#A3BE8C gui=undercurl,bold
 	autocmd ColorScheme * hi SignColumn guibg=NONE
 	autocmd ColorScheme * hi Conceal guifg=#88C0D0 guibg=NONE
-	autocmd ColorScheme * hi WhichKeySeperator guibg=NONE guifg=#B48EAD
+	autocmd ColorScheme * hi WhichKeySeperator guibg=NONE guifg=#A3BE8C
 augroup END
 
 augroup filetype_markdown

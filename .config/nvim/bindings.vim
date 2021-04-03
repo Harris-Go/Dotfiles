@@ -6,35 +6,33 @@
 nnoremap <leader>m :call ToggleWriting()<CR>
 
 "Toggle Spelling
-nnoremap <leader>s :setlocal spell! spelllang=en_gb<CR>
+nnoremap <leader>ss :setlocal spell! spelllang=en_gb<CR>
 
 "Toggle Pencil
-nnoremap <leader>sp :SoftPencil<CR>
-nnoremap <leader>hp :HardPencil<CR>
-nnoremap <leader>np :NoPencil<CR>
+nnoremap <leader>ps :SoftPencil<CR>
+nnoremap <leader>ph :HardPencil<CR>
+nnoremap <leader>pn :NoPencil<CR>
 
 "Toggle Goyo
-nnoremap <leader>g :Goyo 80<CR> "Format to Hard Wrap mode
-
-"Format from Soft Wrap mode
-nnoremap <leader>f gggqG
-
-"Format from Hard Wrap mode
-nnoremap <leader>F :%norm vipJ<CR>
+nnoremap <leader>pg :Goyo 80<CR>
 
 "Toggle Limelight
-nnoremap <leader>l :Limelight!!<CR>
+nnoremap <leader>pl :Limelight!!<CR>
 
-"Turn of search highlight
-nnoremap <silent> <leader>h :noh<CR>
+"Turn off search highlight
+nnoremap <silent> <leader><space> :noh<CR>
 
 "Toggle previews
-nnoremap <leader>pm :MarkdownPreview<CR>
-nnoremap <leader>pl :VimtexCompile<CR>
+nnoremap <leader>lm :MarkdownPreview<CR>
+
+"Toggle Table Mode
+nnoremap <leader>pt :TableModeToggle<CR>
+
+noremap <leader>ll :VimtexCompile<CR>
 
 "Pandoc Commands
-nnoremap <leader>pp :!pandoc %:p:r.md --from markdown+grid_tables -V geometry:"top=2cm, bottom=1.5cm, left=2cm, right=2cm" -V CJkmainfont="Roboto Medium" -o %:p:r.pdf<CR>
-nnoremap <leader>pd :!pandoc %:p:r.md --from markdown+grid_tables -o %:p:r.docx<CR>
+"nnoremap <leader>pp :!pandoc %:p:r.md --from markdown+grid_tables -V geometry:"top=2cm, bottom=1.5cm, left=2cm, right=2cm" -V CJkmainfont="Roboto Medium" -o %:p:r.pdf<CR>
+"nnoremap <leader>pd :!pandoc %:p:r.md --from markdown+grid_tables -o %:p:r.docx<CR>
 
 "Use ,, to jump to jump points
 inoremap <leader><leader> <Esc>/<++><CR>:noh<CR>c4l
@@ -63,6 +61,9 @@ nnoremap <leader>w> <C-w>>
 nnoremap <leader>w+ <C-w>+
 nnoremap <leader>w- <C-w>-
 nnoremap <leader>w= <C-w>=
+nnoremap <leader>wv :vsplit
+nnoremap <leader>ws :split
+nnoremap <leader>wn :vsplit $HOME/.config/nvim/init.vim<CR>
 
 "Set undo points
 inoremap . .<C-g>u
@@ -74,4 +75,3 @@ inoremap <CR> <CR><C-g>u
 tnoremap jj <C-\><C-n>
 
 
-"
