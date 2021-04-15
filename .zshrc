@@ -134,5 +134,6 @@ alias c="clear"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias zconf="nvim $HOME/.zshrc"
 alias zsource="source $HOME/.zshrc"
+alias neofetch="neofetch --backend kitty --source /home/harris/Downloads/archicon.png"
 
 #source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

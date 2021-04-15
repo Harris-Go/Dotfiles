@@ -79,7 +79,7 @@ let g:pandoc#syntax#conceal#urls = 1
 let g:vimtex_view_method = 'zathura'
 let g:which_key_map = {}
 let g:which_key_use_floating_win = 0
-let g:table_mode_disable_mappings = 0
+let g:table_mode_disable_tableize_mappings = 1
 let g:table_mode_syntax = 1
 
 augroup tableConfig

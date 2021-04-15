@@ -16,7 +16,7 @@ window:
         padding:
                 x: 3
                 y: 3
-        decorations: none
+        decorations: full
 
 scrolling:
         history: 10000
