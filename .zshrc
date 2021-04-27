@@ -135,6 +135,10 @@ alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias zconf="nvim $HOME/.zshrc"
 alias zsource="source $HOME/.zshrc"
 alias neofetch="neofetch --backend kitty --source /home/harris/Downloads/archicon.png"
+alias emacsdoom="echo 'doom' > /home/harris/.emacs-profile && emacs"
+alias emacscustom="echo 'custom' > /home/harris/.emacs-profile && emacs"
+alias einit="emacs $HOME/.emacs.custom/init.el"
+alias econf="emacs $HOME/.emacs.custom/config.el"
 
 #source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
